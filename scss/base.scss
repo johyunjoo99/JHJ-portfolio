@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+/*font */
+@import url('//fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&subset=korean');
+/* font-family: 'Noto Sans KR', sans-serif; */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* font-family: 'Pretendard', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+/* font-family: "Boldonse", system-ui; */
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+/* font-family: "Tektur", sans-serif; */
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+/* font-family: 'Paperozi', sans-serif; */
+
+
+/* common */
+*{ 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+}
+html, 
+body{ 
+    font-size: 62.5%; 
+}
+
+/* link */
+a, 
+a:link, 
+a:active, 
+a:visited, 
+a:hover{ 
+    text-decoration:none; 
+}
+a{ 
+    outline: none; 
+}
+
+/* img */
+figure{ 
+    margin: 0; 
+}
+img{ 
+    max-width: 100%; 
+    vertical-align:top; 
+}
+
+/* form */
+select, 
+input,
+textarea{ 
+    outline: none; 
+}
+select, 
+input{ 
+    vertical-align:middle; 
+}
+button{ 
+    cursor: pointer; 
+} 
+
+/* list */
+ul, 
+ol, 
+li{ 
+    list-style:none; 
+}
+
+/* table */
+table{ 
+    width:100%; 
+    border: 0; 
+    table-layout:fixed; 
+    border-collapse:collapse; 
+    border-spacing:0; 
+}

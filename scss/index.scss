@@ -1,0 +1,98 @@
+/* common */
+main{ 
+    position: relative; 
+    z-index: 10; 
+}
+
+
+/* visual */
+#visual{
+    --scrolldown: 200px;
+}
+#visual{ 
+    max-height: 100svh; 
+    height: 100vh; 
+    padding-top: var(--headerH); 
+
+    > div{ 
+        height: 100%; 
+    }
+
+    .grid-box{ 
+        height: 100%; 
+        display: grid; 
+        grid-template-columns: auto var(--scrolldown); 
+        padding: 70px 0; 
+    }
+
+    .txt h1{
+        font-family: var(--engFont); 
+        font-size: 8rem; 
+        font-weight: 400; 
+        line-height: 1.6;
+
+        em{ 
+            background: linear-gradient(to top, transparent 0% 10%, var(--mainColor) 10% 13%, transparent 13% 100%) left center no-repeat;
+            // background-size: 0;
+            font-family: inherit; 
+            color: var(--mainColor); 
+            font-style: normal; 
+        }
+    }
+
+    p{ 
+        font-size: 22px; 
+        font-weight: 400; 
+        line-height: 1.7; 
+        margin-top: 30px; 
+    }
+
+    .scrolldown{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        div{ 
+            position: relative; 
+
+            span{ 
+                display: block; 
+                background: url("/img/index/icon_scrolldown.svg") no-repeat center center / contain; 
+                aspect-ratio: 1 / 1; 
+                animation: rotate360 8s linear infinite;
+            }
+
+            i{ 
+                height: 50px; 
+                position: absolute; 
+                top: 50%; 
+                left: 0; 
+                right: 0; 
+                transform: translateY(-50%); 
+                overflow: hidden;
+
+                &::before,
+                &::after{ 
+                    content: "";
+                    height: 100%;
+                    background: url("/img/index/icon_scrolldown_arrow.svg") no-repeat center center / contain; 
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                }
+
+                &::before{ 
+                    top: 0; 
+                    transform: translateY(0);
+                    animation: scrolldown01 2s infinite;
+                }
+
+                &::after{ 
+                    top: -10px; 
+                    transform: translateY(-100%);
+                    animation: scrolldown02 2s infinite;
+                }
+            }
+        }
+    }
+}

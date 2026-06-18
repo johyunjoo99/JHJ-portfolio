@@ -1,0 +1,84 @@
+/* common */
+main {
+  position: relative;
+  z-index: 10;
+}
+
+/* visual */
+#visual {
+  --scrolldown: 200px;
+}
+
+#visual {
+  max-height: 100svh;
+  height: 100vh;
+  padding-top: var(--headerH);
+}
+#visual > div {
+  height: 100%;
+}
+#visual .grid-box {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto var(--scrolldown);
+  padding: 70px 0;
+}
+#visual .txt h1 {
+  font-family: var(--engFont);
+  font-size: 8rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+#visual .txt h1 em {
+  background: linear-gradient(to top, transparent 0% 10%, var(--mainColor) 10% 13%, transparent 13% 100%) left center no-repeat;
+  font-family: inherit;
+  color: var(--mainColor);
+  font-style: normal;
+}
+#visual p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-top: 30px;
+}
+#visual .scrolldown {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#visual .scrolldown div {
+  position: relative;
+}
+#visual .scrolldown div span {
+  display: block;
+  background: url("/img/index/icon_scrolldown.svg") no-repeat center center/contain;
+  aspect-ratio: 1/1;
+  animation: rotate360 8s linear infinite;
+}
+#visual .scrolldown div i {
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+#visual .scrolldown div i::before, #visual .scrolldown div i::after {
+  content: "";
+  height: 100%;
+  background: url("/img/index/icon_scrolldown_arrow.svg") no-repeat center center/contain;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+#visual .scrolldown div i::before {
+  top: 0;
+  transform: translateY(0);
+  animation: scrolldown01 2s infinite;
+}
+#visual .scrolldown div i::after {
+  top: -10px;
+  transform: translateY(-100%);
+  animation: scrolldown02 2s infinite;
+}
