@@ -191,3 +191,146 @@ header{
 		}
 	}
 }
+
+
+/* footer */
+footer{
+	background: var(--textColor);
+	font-size: 20px;
+	font-weight: 200;
+	position: relative;
+	z-index: 900;
+	
+	*{
+		color: #FFF;
+	}
+
+	.link{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+		ul{
+			display: flex;
+			justify-content: flex-end;
+			margin-right: -20px;
+
+			li{
+				a{
+					display: block;
+					font-size: 22px;
+					font-weight: 500;
+					padding: 40px 20px;
+				}
+			}
+		}
+	}
+
+	.flex-box{
+		display: flex;
+		padding: 50px 0;
+	}
+
+	.info{
+		flex: 1 1 auto;
+		min-width: 0;
+	
+		h2{
+			font-family: var(--engFont);
+			font-size: 24px;
+			font-weight: 400;
+			margin-bottom: 30px;
+		}
+
+		address{
+			font-style: normal;
+
+			dl{
+				display: flex;
+				margin-bottom: 15px;
+
+				dt{
+					flex-shrink: 0;
+					font-weight: 400;
+					margin-right: 10px;
+				}
+
+				dd{
+					flex: 1 1 auto;
+					min-width: 0;
+					color: rgba(255, 255, 255, 0.7);
+				}
+			}
+		}
+
+		.copyright{
+			color: rgba(255, 255, 255, 0.7);
+		}
+	}
+}
+
+
+/* top */
+#top{
+	flex-shrink: 0;
+	width: 140px;
+	height: 140px;
+	background: none;
+	border: 2px solid rgba(255, 255, 255, 0.7);
+	padding: 0;
+	transition: background 0.4s, border-color 0.4s;
+
+	i{
+		display: inline-block;
+		width: 100%;
+		height: 50px;
+		vertical-align: middle;
+		position: relative;
+		overflow: hidden;
+
+		&::before,
+		&::after{
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.7);
+			mask: url("/img/common/icon_top.svg") no-repeat center center / contain;
+			-webkit-mask: url("/img/common/icon_top.svg") no-repeat center center / contain;
+			transition: background 0.4s, top 0.4s,transform 0.4s;
+		}
+
+		&::before{
+			position: relative;
+			top: 0;
+			transform: translateY(0);
+		}
+
+		&::after{
+			position: absolute;
+			top: 15px;
+			left: 0;
+			transform: translateY(100%);
+		}
+	}
+
+	&:hover{
+		background: var(--mainColor);
+		border-color: var(--mainColor);
+
+		i{
+			&::before,
+			&::after{
+				background: #FFF;
+			}
+	
+			&::before{
+				top: -15px;
+				transform: translateY(-100%);
+			}
+
+			&::after{
+				top: 0;
+				transform: translateY(0);
+			}
+		}
+	}
+}

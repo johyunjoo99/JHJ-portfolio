@@ -174,3 +174,118 @@ header .menu span {
 header .menu span:not(:last-of-type) {
   margin-bottom: 8px;
 }
+
+/* footer */
+footer {
+  background: var(--textColor);
+  font-size: 20px;
+  font-weight: 200;
+  position: relative;
+  z-index: 900;
+}
+footer * {
+  color: #FFF;
+}
+footer .link {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+footer .link ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -20px;
+}
+footer .link ul li a {
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 40px 20px;
+}
+footer .flex-box {
+  display: flex;
+  padding: 50px 0;
+}
+footer .info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+footer .info h2 {
+  font-family: var(--engFont);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+footer .info address {
+  font-style: normal;
+}
+footer .info address dl {
+  display: flex;
+  margin-bottom: 15px;
+}
+footer .info address dl dt {
+  flex-shrink: 0;
+  font-weight: 400;
+  margin-right: 10px;
+}
+footer .info address dl dd {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+footer .info .copyright {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* top */
+#top {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 0;
+  transition: background 0.4s, border-color 0.4s;
+}
+#top i {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+}
+#top i::before, #top i::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  mask: url("/img/common/icon_top.svg") no-repeat center center/contain;
+  -webkit-mask: url("/img/common/icon_top.svg") no-repeat center center/contain;
+  transition: background 0.4s, top 0.4s, transform 0.4s;
+}
+#top i::before {
+  position: relative;
+  top: 0;
+  transform: translateY(0);
+}
+#top i::after {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  transform: translateY(100%);
+}
+#top:hover {
+  background: var(--mainColor);
+  border-color: var(--mainColor);
+}
+#top:hover i::before, #top:hover i::after {
+  background: #FFF;
+}
+#top:hover i::before {
+  top: -15px;
+  transform: translateY(-100%);
+}
+#top:hover i::after {
+  top: 0;
+  transform: translateY(0);
+}

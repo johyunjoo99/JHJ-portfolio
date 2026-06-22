@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* common */
 :root {
   --sec160: 160px;
@@ -16,14 +17,16 @@ main {
   font-family: var(--engFont);
   font-size: 6rem;
   font-weight: 400;
-  color: var(--textColor);
 }
 .sec-title p {
   font-size: 24px;
   font-weight: 400;
-  color: var(--textColor);
   line-height: 1.7;
   margin-top: 30px;
+}
+.sec-title em {
+  color: var(--mainColor);
+  font-style: normal;
 }
 
 /* hyphen-list */
@@ -53,7 +56,6 @@ main {
   font-family: var(--pointFont);
   font-size: 24px;
   font-weight: 400;
-  color: var(--textColor);
   line-height: normal;
   text-align: center;
   padding: 8px 18px;
@@ -218,10 +220,10 @@ main {
   align-items: center;
 }
 #visual .slogan .origin {
-  animation: origin_left 50s linear infinite;
+  animation: origin_left 40s linear infinite;
 }
 #visual .slogan .clone {
-  animation: clone_left 50s linear infinite;
+  animation: clone_left 40s linear infinite;
 }
 #visual .slogan span {
   display: inline-block;
@@ -297,7 +299,6 @@ main {
   background: var(--bgColor);
   font-size: 20px;
   font-weight: 400;
-  color: var(--textColor);
   padding: var(--tablePaddingTB) var(--tablePaddingLR);
 }
 #profile .table-box table td strong {
@@ -440,4 +441,197 @@ main {
 #project .autoplay {
   border-top: 2px solid var(--textColor);
   border-bottom: 2px solid var(--textColor);
+}
+#project .autoplay .flex-box {
+  display: flex;
+  border-left: 2px solid var(--textColor);
+  border-right: 2px solid var(--textColor);
+}
+#project .autoplay .text {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-right: 2px solid var(--textColor);
+}
+#project .autoplay .text .swiper,
+#project .autoplay .text .swiper-wrapper,
+#project .autoplay .text .swiper-slide {
+  height: 100%;
+}
+#project .autoplay .text .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 60px;
+}
+#project .autoplay .text .content {
+  flex: 1 0 auto;
+}
+#project .autoplay .text .content > *:not(:last-child) {
+  margin-bottom: 40px;
+}
+#project .autoplay .text .content .tit h3 {
+  font-size: 5rem;
+  font-weight: 600;
+}
+#project .autoplay .text .content .tit p {
+  font-size: 24px;
+  font-weight: 400;
+}
+#project .autoplay .text .content .hyphen-list li {
+  font-size: 22px;
+}
+#project .autoplay .text .content .hyphen-list li :not(:last-of-type) {
+  margin-bottom: 15px;
+}
+#project .autoplay .text .content .hyphen-list li strong {
+  font-weight: 600;
+}
+#project .autoplay .text .btns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 15px;
+}
+#project .autoplay .text .btns .viewmore {
+  background: var(--textColor);
+  font-weight: 500;
+  color: #FFF;
+}
+#project .autoplay .text .btns .viewmore i {
+  background: #FFF;
+}
+#project .autoplay .img {
+  width: 700px;
+  flex-shrink: 0;
+}
+#project .autoplay .img figure {
+  display: block;
+  aspect-ratio: 700/600;
+}
+#project .autoplay .img figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#project .archive {
+  padding-top: 100px;
+}
+#project .archive .flex-box {
+  display: flex;
+}
+#project .archive .left {
+  flex-shrink: 0;
+  width: 600px;
+  padding-right: 100px;
+}
+#project .archive .left p {
+  font-family: var(--engFont);
+  font-size: 4rem;
+  font-weight: 400;
+}
+#project .archive .right {
+  --padding: 15px;
+  --gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+#project .archive .right ul {
+  border-top: 3px solid var(--textColor);
+}
+#project .archive .right ul li {
+  border-bottom: 1px solid var(--textColor);
+}
+#project .archive .right ul li a {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: var(--padding) calc(var(--padding) + var(--gap));
+  transition: background 0.4s;
+}
+#project .archive .right ul li a h3 {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  font-size: 22px;
+  font-weight: 500;
+  padding-right: calc(var(--padding) + var(--gap));
+  transform: translateX(calc(var(--gap) * -1));
+  transition: color 0.4s, transform 0.4s;
+}
+#project .archive .right ul li a h3 em {
+  flex-shrink: 0;
+  display: inline-flex;
+  background: var(--mainColor);
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFF;
+  font-style: normal;
+  padding: 3px 10px;
+  margin-right: 15px;
+  transition: background 0.4s, color 0.4s;
+}
+#project .archive .right ul li a i {
+  flex-shrink: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--textColor);
+  mask: url("/img/index/icon_viewmore.svg") no-repeat center center/contain;
+  -webkit-mask: url("/img/index/icon_viewmore.svg") no-repeat center center/contain;
+  transform: translateX(var(--gap));
+  transition: background 0.4s, transform 0.4s;
+}
+#project .archive .right ul li a:hover {
+  background: var(--mainColor);
+}
+#project .archive .right ul li a:hover h3 {
+  color: #FFF;
+  transform: translateX(0);
+}
+#project .archive .right ul li a:hover h3 em {
+  background: #FFF;
+  color: var(--mainColor);
+}
+#project .archive .right ul li a:hover i {
+  background: #FFF;
+  transform: translateX(0);
+}
+
+/* ===== Let’s Work Together ===== */
+#together {
+  text-align: center;
+  padding: var(--sec160) 0;
+}
+#together .icon-list {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#together .icon-list ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 20px;
+}
+#together .icon-list ul li {
+  border: 2px solid var(--textColor);
+  padding: 50px;
+}
+#together .icon-list ul li p {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--textColor);
+  margin-top: 20px;
+}
+#together .text {
+  margin-top: 60px;
+}
+#together .text > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+#together .text p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+#together .text strong {
+  font-size: 28px;
+  font-weight: 500;
 }
