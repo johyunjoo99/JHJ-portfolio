@@ -131,6 +131,7 @@ main{
 #visual{
     --scrolldown: 200px;
 }
+
 #visual{ 
     max-height: 100svh; 
     height: 100vh; 
@@ -155,25 +156,30 @@ main{
         }
     }
 
-    .grid-box{ 
+    .flex-box{ 
         height: 100%;
-        display: grid; 
-        grid-template-columns: auto var(--scrolldown); 
-        grid-template-rows: 1fr auto;
+        display: flex;
+        flex-direction: column;
+        padding-right: calc(var(--scrolldown) + 60px);
+        position: relative;
     }
 
-    .txt h1{
-        font-family: var(--engFont); 
-        font-size: 8rem; 
-        font-weight: 400; 
-        line-height: 1.6;
+    .txt{
+        flex: 1 0 auto;
 
-        em{ 
-            background: linear-gradient(to top, transparent 0% 10%, var(--mainColor) 10% 13%, transparent 13% 100%) left center no-repeat;
-            // background-size: 0;
-            font-family: inherit; 
-            color: var(--mainColor); 
-            font-style: normal; 
+        h1{
+            font-family: var(--engFont); 
+            font-size: 8rem; 
+            font-weight: 400; 
+            line-height: 1.6;
+    
+            em{ 
+                background: linear-gradient(to top, transparent 0% 10%, var(--mainColor) 10% 13%, transparent 13% 100%) left center no-repeat;
+                // background-size: 0;
+                font-family: inherit; 
+                color: var(--mainColor); 
+                font-style: normal; 
+            }
         }
     }
 
@@ -185,10 +191,13 @@ main{
     }
 
     .scrolldown{
-        grid-row: auto / span 2;
+        width: var(--scrolldown);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        position: absolute;
+        bottom: 0;
+        right: 0;
 
         div{ 
             position: relative; 
@@ -279,6 +288,10 @@ main{
             height: 16px;
             background: #FFF;
         }
+    }
+
+    ~ section{
+        scroll-margin-top: calc(var(--headerH) / 2);
     }
 }
 
@@ -626,6 +639,24 @@ main{
                     height: 100%;
                     object-fit: cover;
                 }
+            }
+
+            .swiper-slide{
+                opacity: 1 !important;
+                clip-path: inset(0 0 0 0);
+                -webkit-clip-path: inset(0 0 0 0);
+                z-index: 0;
+                transition: clip-path 0.7s;
+            }
+
+            .swiper-slide-prev{
+                clip-path: inset(0 100% 0 0);
+                -webkit-clip-path: inset(0 100% 0 0);
+                z-index: 100;
+            }
+
+            .swiper-slide-active{
+                z-index: 50;
             }
         }
     }

@@ -135,11 +135,15 @@ main {
 #visual .inner .content > div {
   height: 100%;
 }
-#visual .grid-box {
+#visual .flex-box {
   height: 100%;
-  display: grid;
-  grid-template-columns: auto var(--scrolldown);
-  grid-template-rows: 1fr auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: calc(var(--scrolldown) + 60px);
+  position: relative;
+}
+#visual .txt {
+  flex: 1 0 auto;
 }
 #visual .txt h1 {
   font-family: var(--engFont);
@@ -160,10 +164,13 @@ main {
   margin-top: 30px;
 }
 #visual .scrolldown {
-  grid-row: auto/span 2;
+  width: var(--scrolldown);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 #visual .scrolldown div {
   position: relative;
@@ -240,6 +247,9 @@ main {
   width: 16px;
   height: 16px;
   background: #FFF;
+}
+#visual ~ section {
+  scroll-margin-top: calc(var(--headerH) / 2);
 }
 
 /* ===== profile ===== */
@@ -510,6 +520,21 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+#project .autoplay .img .swiper-slide {
+  opacity: 1 !important;
+  clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
+  z-index: 0;
+  transition: clip-path 0.7s;
+}
+#project .autoplay .img .swiper-slide-prev {
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+  z-index: 100;
+}
+#project .autoplay .img .swiper-slide-active {
+  z-index: 50;
 }
 #project .archive {
   padding-top: 100px;

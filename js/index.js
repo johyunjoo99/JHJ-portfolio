@@ -14,6 +14,12 @@ const speed = 700;
 const autoplay = 5000;
 const project = document.querySelector("#project");
 const btns = project.querySelector(".btns");
+const num = project.querySelector(".num");
+const length = num.querySelector(".length");
+const idx = num.querySelector(".idx");
+const count = project.querySelectorAll(".img .swiper-slide").length;
+
+length.textContent = String(count).padStart(2, "0");
 
 const projectText = new Swiper("#project .text .swiper", {
     slidesPerView: 1,
@@ -42,9 +48,15 @@ const projectImg = new Swiper("#project .img .swiper", {
         swiper: projectText,
     },
     allowTouchMove: false,
+    on: {
+        slideChangeTransitionStart(){
+            idx.textContent = String(this.realIndex + 1).padStart(2, "0");
+        }, 
+    },
 });
 
 projectImg.autoplay.stop();
+
 
 //btns
 btns.addEventListener("click", (e) => {
