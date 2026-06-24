@@ -136,6 +136,7 @@ main{
     max-height: 100svh; 
     height: 100vh; 
     padding-top: var(--headerH); 
+    margin-bottom: calc(var(--sec160) / 2);
 
     > div{ 
         height: 100%; 
@@ -291,7 +292,7 @@ main{
     }
 
     ~ section{
-        scroll-margin-top: calc(var(--headerH) / 2);
+        scroll-margin-top: var(--headerH);
     }
 }
 
@@ -303,7 +304,7 @@ main{
 }
 
 #profile{
-    padding-top: var(--sec160);
+    padding: calc(var(--sec160) / 2) 0;
 
     .table-box{
         > *:not(:last-child){
@@ -441,7 +442,7 @@ main{
 
 /* ===== project ===== */
 #project{
-    padding-top: var(--sec160);
+    padding: calc(var(--sec160) / 2) 0;
 
     .sec-title{
         display: flex;
@@ -551,6 +552,7 @@ main{
     .autoplay{
         border-top: 2px solid var(--textColor);
         border-bottom: 2px solid var(--textColor);
+        opacity: 1 !important;
 
         .flex-box{
             display: flex;
@@ -646,13 +648,25 @@ main{
                 clip-path: inset(0 0 0 0);
                 -webkit-clip-path: inset(0 0 0 0);
                 z-index: 0;
-                transition: clip-path 0.7s;
+                
             }
 
-            .swiper-slide-prev{
-                clip-path: inset(0 100% 0 0);
-                -webkit-clip-path: inset(0 100% 0 0);
-                z-index: 100;
+            .swiper-direction-next{
+                .swiper-slide-prev{
+                    transition: clip-path 0.7s;
+                    clip-path: inset(0 100% 0 0);
+                    -webkit-clip-path: inset(0 100% 0 0);
+                    z-index: 100;
+                }
+            }
+
+            .swiper-direction-prev{
+                .swiper-slide-next{
+                    z-index: 100;
+                    transition: clip-path 0.7s;
+                    clip-path: inset(0 0 0 100%);
+                    -webkit-clip-path: inset(0 0 0 100%);
+                }
             }
 
             .swiper-slide-active{
@@ -766,7 +780,7 @@ main{
 /* ===== Let’s Work Together ===== */
 #together{
     text-align: center;
-    padding: var(--sec160) 0;
+    padding: calc(var(--sec160) / 2) 0 var(--sec160);
 
     .icon-list{
         max-width: 1200px;

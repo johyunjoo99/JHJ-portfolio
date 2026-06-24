@@ -9,6 +9,13 @@ const menuBtn = document.querySelectorAll(".menuBtn");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 
+//AOS
+AOS.init({
+  once : true,
+	throttleDelay : 99,
+});
+
+
 //header
 window.addEventListener("load", setActiveMenu);
 window.addEventListener("scroll", setActiveMenu);

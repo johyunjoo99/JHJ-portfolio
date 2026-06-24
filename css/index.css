@@ -119,6 +119,7 @@ main {
   max-height: 100svh;
   height: 100vh;
   padding-top: var(--headerH);
+  margin-bottom: calc(var(--sec160) / 2);
 }
 #visual > div {
   height: 100%;
@@ -249,7 +250,7 @@ main {
   background: #FFF;
 }
 #visual ~ section {
-  scroll-margin-top: calc(var(--headerH) / 2);
+  scroll-margin-top: var(--headerH);
 }
 
 /* ===== profile ===== */
@@ -259,7 +260,7 @@ main {
 }
 
 #profile {
-  padding-top: var(--sec160);
+  padding: calc(var(--sec160) / 2) 0;
 }
 #profile .table-box > *:not(:last-child) {
   margin-bottom: 30px;
@@ -360,7 +361,7 @@ main {
 
 /* ===== project ===== */
 #project {
-  padding-top: var(--sec160);
+  padding: calc(var(--sec160) / 2) 0;
 }
 #project .sec-title {
   display: flex;
@@ -451,6 +452,7 @@ main {
 #project .autoplay {
   border-top: 2px solid var(--textColor);
   border-bottom: 2px solid var(--textColor);
+  opacity: 1 !important;
 }
 #project .autoplay .flex-box {
   display: flex;
@@ -526,12 +528,18 @@ main {
   clip-path: inset(0 0 0 0);
   -webkit-clip-path: inset(0 0 0 0);
   z-index: 0;
-  transition: clip-path 0.7s;
 }
-#project .autoplay .img .swiper-slide-prev {
+#project .autoplay .img .swiper-direction-next .swiper-slide-prev {
+  transition: clip-path 0.7s;
   clip-path: inset(0 100% 0 0);
   -webkit-clip-path: inset(0 100% 0 0);
   z-index: 100;
+}
+#project .autoplay .img .swiper-direction-prev .swiper-slide-next {
+  z-index: 100;
+  transition: clip-path 0.7s;
+  clip-path: inset(0 0 0 100%);
+  -webkit-clip-path: inset(0 0 0 100%);
 }
 #project .autoplay .img .swiper-slide-active {
   z-index: 50;
@@ -624,7 +632,7 @@ main {
 /* ===== Let’s Work Together ===== */
 #together {
   text-align: center;
-  padding: var(--sec160) 0;
+  padding: calc(var(--sec160) / 2) 0 var(--sec160);
 }
 #together .icon-list {
   max-width: 1200px;
