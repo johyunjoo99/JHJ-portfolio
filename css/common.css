@@ -83,6 +83,9 @@ body * {
   }
 }
 @media screen and (max-width: 1700px) {
+  :root {
+    --headerH: 70px;
+  }
   html {
     font-size: 50%;
   }
@@ -90,6 +93,7 @@ body * {
 @media screen and (max-width: 1280px) {
   :root {
     --innerGap: 40px;
+    --headerH: 60px;
     --aosP: 30px;
     --aosM: -30px;
   }
@@ -130,12 +134,14 @@ body * {
 }
 
 .menuBtn {
+  --gap: 8px;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
+  height: var(--headerH);
   background: none;
   border: none;
-  padding: 25px;
+  padding: 0 25px;
   margin-right: -25px;
 }
 .menuBtn span {
@@ -151,9 +157,19 @@ body * {
   will-change: top, transform, opacity;
 }
 .menuBtn span:not(:last-of-type) {
-  margin-bottom: 8px;
+  margin-bottom: var(--gap);
 }
 
+@media screen and (max-width: 1280px) {
+  .menuBtn {
+    --gap: 6px;
+    padding: 20px;
+    margin-right: -20px;
+  }
+  .menuBtn span {
+    width: 32px;
+  }
+}
 /* ===== header ===== */
 header {
   width: 100%;
@@ -168,9 +184,17 @@ header .flex-box {
   height: var(--headerH);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+header h1 a {
+  display: block;
+  font-family: var(--engFont);
+  font-size: 20px;
+  font-size: 400;
 }
 header nav ul {
   display: flex;
+  margin-left: -25px;
 }
 header nav ul li a {
   height: var(--headerH);
@@ -185,7 +209,38 @@ header nav ul li a {
 header nav ul li.on a {
   color: var(--mainColor);
 }
+header .menuBtn {
+  display: none;
+}
 
+@media screen and (max-width: 1700px) {
+  header h1 a {
+    font-size: 18px;
+  }
+  header nav ul li a {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  header h1 a {
+    font-size: 17px;
+  }
+  header nav ul {
+    margin-left: -20px;
+  }
+  header nav ul li a {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header nav {
+    display: none;
+  }
+  header .menuBtn {
+    display: inline-flex;
+  }
+}
 /* ===== menu ===== */
 #menu {
   width: 100%;
@@ -265,14 +320,14 @@ header nav ul li.on a {
 
 /* ===== body - open ===== */
 body.open .menuBtn span:nth-of-type(1) {
-  top: 10px;
+  top: calc(var(--gap) + 2px);
   transform: rotate(45deg);
 }
 body.open .menuBtn span:nth-of-type(2) {
   opacity: 0;
 }
 body.open .menuBtn span:nth-of-type(3) {
-  top: -10px;
+  top: calc((var(--gap) + 2px) * -1);
   transform: rotate(-45deg);
 }
 body.open #menu {

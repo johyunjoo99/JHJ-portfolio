@@ -6,6 +6,7 @@
 main{ 
     position: relative; 
     z-index: 10; 
+    overflow: hidden;
 }
 
 
@@ -75,11 +76,10 @@ main{
 
 
 /* viewmore */
-.viewmore{
+.viewmore{ 
     --gap: 10px;
     --paddingLR: 25px;
-}
-.viewmore{ 
+
     min-height: 70px; 
     display: inline-flex; 
     align-items: center; 
@@ -126,13 +126,132 @@ main{
     }
 }
 
+@media screen and (max-width: 1700px){
+    /* sec-title */
+    .sec-title{
+        padding-bottom: 40px;
 
-/* ===== visual ===== */
-#visual{
-    --scrolldown: 200px;
+        p{
+            font-size: 22px;
+        }
+    }
+
+    /* hashtag */
+    .hashtag{
+        ul{
+            li{
+                font-size: 22px;
+                padding: 7px 16px;
+            }
+        }
+    }
+
+    /* viewmore */
+    .viewmore{ 
+        min-height: 65px; 
+        font-size: 20px; 
+
+        span{
+            margin-right: 40px;
+        }
+    }
 }
 
+@media screen and (max-width: 1280px){
+    /* sec-title */
+    .sec-title{
+        padding-bottom: 30px;
+
+        p{
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    }
+
+    /* hyphen-list */
+    .hyphen-list{
+        li{
+            &:not(:last-of-type){
+                margin-bottom: 7px;
+            }
+        }
+    }
+
+    /* hashtag */
+    .hashtag{
+        ul{
+            gap: 7px;
+
+            li{
+                font-size: 20px;
+                padding: 5px 14px;
+            }
+        }
+    }
+
+    /* viewmore */
+    .viewmore{ 
+        --paddingLR: 20px;
+
+        min-height: 60px; 
+        font-size: 18px; 
+
+        span{
+            margin-right: 30px;
+        }
+
+        i{
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    /* hashtag */
+    .hashtag{
+        ul{
+            li{
+                font-size: 18px;
+                padding: 5px 10px;
+            }
+        }
+    }
+
+    /* viewmore */
+    .viewmore{
+        --gap: 7px;
+        --paddingLR: 15px;
+
+        font-size: 17px;
+
+        span{
+            margin-right: 15px;
+        }
+
+        i{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 640px){
+    /* hashtag */
+    .hashtag{
+        ul{
+            li{
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+
+/* ===== visual ===== */
 #visual{ 
+    --scrolldown: 200px;
+
     max-height: 100svh; 
     height: 100vh; 
     padding-top: var(--headerH); 
@@ -168,7 +287,7 @@ main{
     .txt{
         flex: 1 0 auto;
 
-        h1{
+        h2{
             font-family: var(--engFont); 
             font-size: 8rem; 
             font-weight: 400; 
@@ -296,14 +415,151 @@ main{
     }
 }
 
+@media screen and (max-width: 1700px){    
+    #visual{
+        --scrolldown: 180px;
+
+        .txt{
+            p{
+                font-size: 20px;
+            }
+        }
+
+        .scrolldown{
+            div{
+                i{
+                    height: 46px;
+                }
+            }
+        }
+
+        .slogan{     
+            span{
+                padding: 0 40px;
+            }
+    
+            i{
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px){
+    #visual{
+        --scrolldown: 160px;
+
+        .txt{
+            p{
+                font-size: 19px;
+            }
+        }
+
+        .scrolldown{
+            div{
+                i{
+                    height: 42px;
+                }
+            }
+        }
+
+        .slogan{     
+            span{
+                padding: 0 30px;
+            }
+    
+            i{
+                width: 9px;
+                height: 9px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    #visual{
+        --scrolldown: 140px;
+
+        .inner{
+            .content{
+                padding: 50px 0 30px;
+            }
+        }
+
+        .flex-box{
+            padding-right: 0;
+        }
+
+        .txt{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+            h2{
+                font-size: 7rem;
+            }
+
+            p{
+                font-size: 18px;
+                margin-top: 20px;
+            }
+        }
+
+        .scrolldown{
+            margin: 50px auto 0;
+            position: static;
+
+            div{
+                i{
+                    height: 36px;
+                }
+            }
+        }
+
+        .btns{
+            padding-top: 60px;
+        
+            .viewmore{
+                flex: 1 1 auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px){
+    #visual{
+        --scrolldown: 120px;
+
+        .txt{
+            h2{
+                font-size: 6rem;
+            }
+        }
+
+        .scrolldown{
+            div{
+                i{
+                    height: 32px;
+                }
+            }
+        }
+    }
+}
+
 
 /* ===== profile ===== */
 #profile{
+    --tableColS: 200px;
+    --tableColM: 270px;
+    --tableColL: 300px;
+    --tableMinHeight: 70px;
+    --tablethFS: 19px;
+    --tabletdFS: 20px;
     --tablePaddingTB: 20px;
     --tablePaddingLR: 25px;
-}
 
-#profile{
     padding: calc(var(--sec160) / 2) 0;
 
     .table-box{
@@ -326,15 +582,15 @@ main{
         table{
             colgroup{
                 .s{
-                    width: 200px;
+                    width: var(--tableColS);
                 }
 
                 .m{
-                    width: 270px;
+                    width: var(--tableColM);
                 }
 
                 .l{
-                    width: 300px;
+                    width: var(--tableColL);
                 }
             }
 
@@ -353,7 +609,7 @@ main{
             th{
                 background: var(--thColor);
                 font-family: var(--engFont);
-                font-size: 20px;
+                font-size: var(--tablethFS);
                 font-weight: 400;
                 color: #FFF;
 
@@ -361,14 +617,14 @@ main{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    min-height: 70px;
+                    min-height: var(--tableMinHeight);
                     padding: var(--tablePaddingTB) var(--tablePaddingLR);
                 }
             }
 
             td{
                 background: var(--bgColor);
-                font-size: 20px;
+                font-size: var(--tabletdFS);
                 font-weight: 400;
                 padding: var(--tablePaddingTB) var(--tablePaddingLR);
 
@@ -436,6 +692,207 @@ main{
                 padding-block: 15px;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1700px){
+    #profile{
+        --tableColS: 170px;
+        --tableColM: 240px;
+        --tableColL: 270px;
+        --tableMinHeight: 60px;
+        --tablethFS: 18px;
+        --tabletdFS: 19px;
+
+        .table-box{
+            .tit{
+                h3{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px){
+    #profile{
+        --tableColM: 220px;
+        --tableColL: 250px;
+        --tablethFS: 17px;
+        --tabletdFS: 18px;
+        --tablePaddingTB: 12px;
+        --tablePaddingLR: 20px;
+
+        .table-box{
+            .tit{
+                padding: 17px 25px;
+
+                h3{
+                    font-size: 21px;
+                }
+            }
+
+            table{
+                th{
+                    span{
+                        min-height: 54px;
+                    }
+                }
+            }
+
+            .education{
+                .flex{
+                    img{
+                        width: 36px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    #profile{
+        --tablePaddingTB: 12px;
+        --tablePaddingLR: 17px;
+
+        .table-box{
+            table{
+                &.responsive{
+                    table,
+                    tbody{
+                        display: block;
+                    }
+                    
+                    colgroup,
+                    thead{
+                        display: none;
+                    }
+
+                    tbody{
+                        tr{
+                            display: flex;
+                            flex-direction: column;
+
+                            &:not(:last-child){
+                                margin-bottom: 10px;
+                            }
+                        
+                            > *{
+                                display: flex;
+                                align-items: center;
+                                min-height: var(--tableMinHeight);
+                                border-right: none;
+                                padding-left: calc(var(--tableColL) + var(--tablePaddingLR));
+                                position: relative;
+
+                                &:not(:last-child){
+                                    border-bottom: none;
+                                }
+
+                                &::before{
+                                    content: attr(data-th);
+                                    display: flex; 
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: var(--tableColL);
+                                    height: 100%;
+                                    background: var(--thColor);
+                                    border-right: 2px solid var(--borderColor);
+                                    font-family: var(--engFont);
+                                    font-size: var(--tablethFS);
+                                    color: #FFF;
+                                    text-align: center;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    box-sizing: border-box;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .education{
+                table{
+                    td{
+                        span{
+                            text-align: left;
+                        }
+                    }
+                }
+
+                .flex{
+                    img{
+                        width: 32px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    #profile{
+        --tableColS: 140px;
+        --tableColM: 180px;
+        --tableColL: 180px;
+        --tablethFS: 15px;
+        --tabletdFS: 16px;
+
+        .table-box{
+            .tit{
+                padding: 15px 20px;
+
+                h3{
+                    font-size: 19px;
+                }
+            }
+
+            .personal{
+                .flex-box{
+                    flex-direction: column;
+
+                    .img{
+                        justify-content: center;
+                        border-width: 4px;
+                        padding: 10px;
+                        margin-bottom: 30px;
+                        
+                        img{
+                            width: 100%;
+                            border: 2px solid var(--borderColor);
+                        }
+                    }
+                }
+            }
+
+            .stack{
+                table{
+                    colgroup{
+                        col.l{
+                            width: var(--tableColS);
+                        }
+                    }
+
+                    td{
+                        padding: var(--tablePaddingTB);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px){
+    #profile{
+        --tableColS: 125px;
+        --tableColM: 165px;
+        --tableColL: 165px;
+        --tablethFS: 14px;
     }
 }
 

@@ -753,23 +753,23 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 [data-aos=zoom-in] {
-    transform: scale(.6)
+    transform: scale(.8)
 }
 
 [data-aos=zoom-in-up] {
-    transform: translate3d(0, var(--aosP), 0) scale(.6)
+    transform: translate3d(0, var(--aosP), 0) scale(.8)
 }
 
 [data-aos=zoom-in-down] {
-    transform: translate3d(0, var(--aosM), 0) scale(.6)
+    transform: translate3d(0, var(--aosM), 0) scale(.8)
 }
 
 [data-aos=zoom-in-right] {
-    transform: translate3d(var(--aosM), 0, 0) scale(.6)
+    transform: translate3d(var(--aosM), 0, 0) scale(.8)
 }
 
 [data-aos=zoom-in-left] {
-    transform: translate3d(var(--aosP), 0, 0) scale(.6)
+    transform: translate3d(var(--aosP), 0, 0) scale(.8)
 }
 
 [data-aos=zoom-out] {

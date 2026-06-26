@@ -7,6 +7,7 @@
 main {
   position: relative;
   z-index: 10;
+  overflow: hidden;
 }
 
 /* sec-title */
@@ -65,9 +66,6 @@ main {
 .viewmore {
   --gap: 10px;
   --paddingLR: 25px;
-}
-
-.viewmore {
   min-height: 70px;
   display: inline-flex;
   align-items: center;
@@ -110,12 +108,92 @@ main {
   background: #FFF !important;
 }
 
+@media screen and (max-width: 1700px) {
+  /* sec-title */
+  .sec-title {
+    padding-bottom: 40px;
+  }
+  .sec-title p {
+    font-size: 22px;
+  }
+  /* hashtag */
+  .hashtag ul li {
+    font-size: 22px;
+    padding: 7px 16px;
+  }
+  /* viewmore */
+  .viewmore {
+    min-height: 65px;
+    font-size: 20px;
+  }
+  .viewmore span {
+    margin-right: 40px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  /* sec-title */
+  .sec-title {
+    padding-bottom: 30px;
+  }
+  .sec-title p {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  /* hyphen-list */
+  .hyphen-list li:not(:last-of-type) {
+    margin-bottom: 7px;
+  }
+  /* hashtag */
+  .hashtag ul {
+    gap: 7px;
+  }
+  .hashtag ul li {
+    font-size: 20px;
+    padding: 5px 14px;
+  }
+  /* viewmore */
+  .viewmore {
+    --paddingLR: 20px;
+    min-height: 60px;
+    font-size: 18px;
+  }
+  .viewmore span {
+    margin-right: 30px;
+  }
+  .viewmore i {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media screen and (max-width: 960px) {
+  /* hashtag */
+  .hashtag ul li {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  /* viewmore */
+  .viewmore {
+    --gap: 7px;
+    --paddingLR: 15px;
+    font-size: 17px;
+  }
+  .viewmore span {
+    margin-right: 15px;
+  }
+  .viewmore i {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 640px) {
+  /* hashtag */
+  .hashtag ul li {
+    font-size: 17px;
+  }
+}
 /* ===== visual ===== */
 #visual {
   --scrolldown: 200px;
-}
-
-#visual {
   max-height: 100svh;
   height: 100vh;
   padding-top: var(--headerH);
@@ -146,13 +224,13 @@ main {
 #visual .txt {
   flex: 1 0 auto;
 }
-#visual .txt h1 {
+#visual .txt h2 {
   font-family: var(--engFont);
   font-size: 8rem;
   font-weight: 400;
   line-height: 1.6;
 }
-#visual .txt h1 em {
+#visual .txt h2 em {
   background: linear-gradient(to top, transparent 0% 10%, var(--mainColor) 10% 13%, transparent 13% 100%) left center no-repeat;
   font-family: inherit;
   color: var(--mainColor);
@@ -253,13 +331,100 @@ main {
   scroll-margin-top: var(--headerH);
 }
 
+@media screen and (max-width: 1700px) {
+  #visual {
+    --scrolldown: 180px;
+  }
+  #visual .txt p {
+    font-size: 20px;
+  }
+  #visual .scrolldown div i {
+    height: 46px;
+  }
+  #visual .slogan span {
+    padding: 0 40px;
+  }
+  #visual .slogan i {
+    width: 12px;
+    height: 12px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  #visual {
+    --scrolldown: 160px;
+  }
+  #visual .txt p {
+    font-size: 19px;
+  }
+  #visual .scrolldown div i {
+    height: 42px;
+  }
+  #visual .slogan span {
+    padding: 0 30px;
+  }
+  #visual .slogan i {
+    width: 9px;
+    height: 9px;
+  }
+}
+@media screen and (max-width: 960px) {
+  #visual {
+    --scrolldown: 140px;
+  }
+  #visual .inner .content {
+    padding: 50px 0 30px;
+  }
+  #visual .flex-box {
+    padding-right: 0;
+  }
+  #visual .txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #visual .txt h2 {
+    font-size: 7rem;
+  }
+  #visual .txt p {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  #visual .scrolldown {
+    margin: 50px auto 0;
+    position: static;
+  }
+  #visual .scrolldown div i {
+    height: 36px;
+  }
+  #visual .btns {
+    padding-top: 60px;
+  }
+  #visual .btns .viewmore {
+    flex: 1 1 auto;
+  }
+}
+@media screen and (max-width: 640px) {
+  #visual {
+    --scrolldown: 120px;
+  }
+  #visual .txt h2 {
+    font-size: 6rem;
+  }
+  #visual .scrolldown div i {
+    height: 32px;
+  }
+}
 /* ===== profile ===== */
 #profile {
+  --tableColS: 200px;
+  --tableColM: 270px;
+  --tableColL: 300px;
+  --tableMinHeight: 70px;
+  --tablethFS: 19px;
+  --tabletdFS: 20px;
   --tablePaddingTB: 20px;
   --tablePaddingLR: 25px;
-}
-
-#profile {
   padding: calc(var(--sec160) / 2) 0;
 }
 #profile .table-box > *:not(:last-child) {
@@ -276,13 +441,13 @@ main {
   color: #FFF;
 }
 #profile .table-box table colgroup .s {
-  width: 200px;
+  width: var(--tableColS);
 }
 #profile .table-box table colgroup .m {
-  width: 270px;
+  width: var(--tableColM);
 }
 #profile .table-box table colgroup .l {
-  width: 300px;
+  width: var(--tableColL);
 }
 #profile .table-box table tr > *:last-child {
   border-right: none !important;
@@ -295,7 +460,7 @@ main {
 #profile .table-box table th {
   background: var(--thColor);
   font-family: var(--engFont);
-  font-size: 20px;
+  font-size: var(--tablethFS);
   font-weight: 400;
   color: #FFF;
 }
@@ -303,12 +468,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70px;
+  min-height: var(--tableMinHeight);
   padding: var(--tablePaddingTB) var(--tablePaddingLR);
 }
 #profile .table-box table td {
   background: var(--bgColor);
-  font-size: 20px;
+  font-size: var(--tabletdFS);
   font-weight: 400;
   padding: var(--tablePaddingTB) var(--tablePaddingLR);
 }
@@ -359,6 +524,141 @@ main {
   padding-block: 15px;
 }
 
+@media screen and (max-width: 1700px) {
+  #profile {
+    --tableColS: 170px;
+    --tableColM: 240px;
+    --tableColL: 270px;
+    --tableMinHeight: 60px;
+    --tablethFS: 18px;
+    --tabletdFS: 19px;
+  }
+  #profile .table-box .tit h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  #profile {
+    --tableColM: 220px;
+    --tableColL: 250px;
+    --tablethFS: 17px;
+    --tabletdFS: 18px;
+    --tablePaddingTB: 12px;
+    --tablePaddingLR: 20px;
+  }
+  #profile .table-box .tit {
+    padding: 17px 25px;
+  }
+  #profile .table-box .tit h3 {
+    font-size: 21px;
+  }
+  #profile .table-box table th span {
+    min-height: 54px;
+  }
+  #profile .table-box .education .flex img {
+    width: 36px;
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #profile {
+    --tablePaddingTB: 12px;
+    --tablePaddingLR: 17px;
+  }
+  #profile .table-box table.responsive table,
+  #profile .table-box table.responsive tbody {
+    display: block;
+  }
+  #profile .table-box table.responsive colgroup,
+  #profile .table-box table.responsive thead {
+    display: none;
+  }
+  #profile .table-box table.responsive tbody tr {
+    display: flex;
+    flex-direction: column;
+  }
+  #profile .table-box table.responsive tbody tr:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  #profile .table-box table.responsive tbody tr > * {
+    display: flex;
+    align-items: center;
+    min-height: var(--tableMinHeight);
+    border-right: none;
+    padding-left: calc(var(--tableColL) + var(--tablePaddingLR));
+    position: relative;
+  }
+  #profile .table-box table.responsive tbody tr > *:not(:last-child) {
+    border-bottom: none;
+  }
+  #profile .table-box table.responsive tbody tr > *::before {
+    content: attr(data-th);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--tableColL);
+    height: 100%;
+    background: var(--thColor);
+    border-right: 2px solid var(--borderColor);
+    font-family: var(--engFont);
+    font-size: var(--tablethFS);
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+  }
+  #profile .table-box .education table td span {
+    text-align: left;
+  }
+  #profile .table-box .education .flex img {
+    width: 32px;
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 960px) {
+  #profile {
+    --tableColS: 140px;
+    --tableColM: 180px;
+    --tableColL: 180px;
+    --tablethFS: 15px;
+    --tabletdFS: 16px;
+  }
+  #profile .table-box .tit {
+    padding: 15px 20px;
+  }
+  #profile .table-box .tit h3 {
+    font-size: 19px;
+  }
+  #profile .table-box .personal .flex-box {
+    flex-direction: column;
+  }
+  #profile .table-box .personal .flex-box .img {
+    justify-content: center;
+    border-width: 4px;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+  #profile .table-box .personal .flex-box .img img {
+    width: 100%;
+    border: 2px solid var(--borderColor);
+  }
+  #profile .table-box .stack table colgroup col.l {
+    width: var(--tableColS);
+  }
+  #profile .table-box .stack table td {
+    padding: var(--tablePaddingTB);
+  }
+}
+@media screen and (max-width: 640px) {
+  #profile {
+    --tableColS: 125px;
+    --tableColM: 165px;
+    --tableColL: 165px;
+    --tablethFS: 14px;
+  }
+}
 /* ===== project ===== */
 #project {
   padding: calc(var(--sec160) / 2) 0;

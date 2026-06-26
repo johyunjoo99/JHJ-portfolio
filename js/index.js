@@ -9,6 +9,26 @@ clone.classList.add("clone");
 slogan.append(clone);
 
 
+//profile
+const profile = document.querySelector("#profile");
+const tableBox = profile.querySelector(".table-box");
+
+tableBox.querySelectorAll("table").forEach((table) => {
+    if(table.classList.contains("responsive")){
+        const ths = table.querySelectorAll("thead th");
+
+        table.querySelectorAll("tbody tr").forEach((tr) => {
+            tr.querySelectorAll(":scope > *").forEach((cell, index) => {
+                if(ths[index]){
+                    cell.setAttribute("data-th", ths[index].textContent);
+                }
+            });
+        });
+    }    
+})
+
+
+
 //project
 let projectIndex = 0;
 const speed = 700;

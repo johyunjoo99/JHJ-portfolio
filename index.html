@@ -2,7 +2,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	<meta name="format-detection" content="telephone=no" />
     <title>조현주 포트폴리오</title>
 
     <link rel="stylesheet" href="/css/aos.css">
@@ -17,11 +19,39 @@
     <script src="/js/base.js" defer></script>
     <script src="/js/common.js" defer></script>
     <script src="/js/index.js" defer></script>
+
+    <script>
+        //screen scale
+        let windowWidth = window.screen.width;
+        setViewPort(windowWidth);
+
+        function setViewPort(w_width) {
+            const viewport = document.querySelector('meta[name="viewport"]');
+
+            if (w_width <= 480) {
+                viewport.setAttribute(
+                "content",
+                "width=480, maximum-scale=2.0, user-scalable=yes, target-densitydpi=medium-dpi"
+                );
+            } else {
+                viewport.setAttribute(
+                "content",
+                "width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi"
+                );
+            }
+        }
+
+        window.addEventListener("resize", function () {
+            windowWidth = window.screen.width;
+            setViewPort(windowWidth);
+        });
+    </script>
 </head>
 <body>
     <header>
         <div class="w1720">
             <div class="flex-box">
+                <h1><a href="/">Jo Hyun Joo</a></h1>
                 <nav>
                     <ul>
                         <li><a href="#visual">Home</a></li>
@@ -59,7 +89,7 @@
                     <div class="w1600">
                         <div class="flex-box">
                             <div class="txt">
-                                <h1>Want to Know <br>More About <em>Me</em>?</h1>
+                                <h2>Want to Know <br>More About <em>Me</em>?</h2>
                                 <p>주어진 디자인을 구현하는 것을 넘어, <br>사용자가 더 편리하게 이용할 수 있는 방법을 고민합니다.</p>
                                 
                                 <div class="scrolldown">
@@ -100,7 +130,7 @@
                     <h2>Profile</h2>
                 </div>
                 <div class="table-box">
-                    <div class="personal">
+                    <div class="personal" data-aos="zoom-out">
                         <div class="flex-box">
                             <figure class="img">
                                 <img src="/img/index/profile_img.png" alt="조현주 증명사진">
@@ -150,7 +180,7 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="career">
+                    <div class="career" data-aos="zoom-out">
                         <div class="tit">
                             <h3>Career</h3>
                         </div>
@@ -196,11 +226,11 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="education">
+                    <div class="education" data-aos="zoom-out">
                         <div class="tit">
                             <h3>Education</h3>
                         </div>
-                        <table>
+                        <table class="responsive">
                             <colgroup>
                                 <col class="l">
                                 <col class="s">
@@ -259,7 +289,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="stack">
+                    <div class="stack" data-aos="zoom-out">
                         <div class="tit">
                             <h3>Tech Stack</h3>
                         </div>
