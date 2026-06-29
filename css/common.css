@@ -243,6 +243,7 @@ header .menuBtn {
 }
 /* ===== menu ===== */
 #menu {
+  --gap: 20px;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -260,7 +261,7 @@ header .menuBtn {
 #menu .inner {
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
   height: 100%;
   background: var(--mainColor);
@@ -297,7 +298,7 @@ header .menuBtn {
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  font-size: 4rem;
+  font-size: 36px;
   font-weight: 600;
   color: #FFF;
   padding: 20px 0;
@@ -315,10 +316,39 @@ header .menuBtn {
   margin-left: 60px;
 }
 #menu nav ul li:hover a {
-  padding-inline: 20px;
+  padding-inline: var(--gap);
 }
 
+@media screen and (max-width: 960px) {
+  #menu {
+    --gap: 15px;
+  }
+  #menu nav ul li a {
+    font-size: 32px;
+    padding: 15px 0;
+  }
+  #menu nav ul li a::after {
+    width: 32px;
+    height: 32px;
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #menu {
+    --gap: 10px;
+  }
+  #menu nav ul li a {
+    font-size: 28px;
+  }
+  #menu nav ul li a::after {
+    width: 28px;
+    height: 28px;
+  }
+}
 /* ===== body - open ===== */
+body.open {
+  overflow: hidden;
+}
 body.open .menuBtn span:nth-of-type(1) {
   top: calc(var(--gap) + 2px);
   transform: rotate(45deg);
@@ -399,6 +429,67 @@ footer .info .copyright {
   color: rgba(255, 255, 255, 0.7);
 }
 
+@media screen and (max-width: 1700px) {
+  footer {
+    font-size: 18px;
+  }
+  footer .link ul li a {
+    font-size: 20px;
+    padding-block: 30px;
+  }
+  footer .flex-box {
+    padding: 40px 0;
+  }
+  footer .info h2 {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  footer {
+    font-size: 17px;
+  }
+  footer .link ul {
+    margin-right: -15px;
+  }
+  footer .link ul li a {
+    font-size: 18px;
+    padding: 25px 15px;
+  }
+  footer .flex-box {
+    padding: 30px 0;
+  }
+  footer .info h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  footer .info address dl {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 960px) {
+  footer {
+    font-size: 16px;
+  }
+  footer .link ul {
+    margin-right: -10px;
+  }
+  footer .link ul li a {
+    font-size: 16px;
+    padding: 20px 10px;
+  }
+  footer .info h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  footer .info address dl {
+    margin-bottom: 7px;
+  }
+}
+@media screen and (max-width: 640px) {
+  footer .info h2 {
+    font-size: 16px;
+  }
+}
 /* top */
 #top {
   flex-shrink: 0;
@@ -438,18 +529,56 @@ footer .info .copyright {
   left: 0;
   transform: translateY(100%);
 }
-#top:hover {
-  background: var(--mainColor);
-  border-color: var(--mainColor);
+
+@media screen and (hover: hover) and (pointer: fine) {
+  #top:hover {
+    background: var(--mainColor);
+    border-color: var(--mainColor);
+  }
+  #top:hover i::before, #top:hover i::after {
+    background: #FFF;
+  }
+  #top:hover i::before {
+    top: -15px;
+    transform: translateY(-100%);
+  }
+  #top:hover i::after {
+    top: 0;
+    transform: translateY(0);
+  }
 }
-#top:hover i::before, #top:hover i::after {
-  background: #FFF;
+@media screen and (max-width: 1700px) {
+  #top {
+    width: 132px;
+    height: 132px;
+  }
 }
-#top:hover i::before {
-  top: -15px;
-  transform: translateY(-100%);
+@media screen and (max-width: 1280px) {
+  #top {
+    width: 113px;
+    height: 113px;
+  }
+  #top i {
+    height: 40px;
+  }
 }
-#top:hover i::after {
-  top: 0;
-  transform: translateY(0);
+@media screen and (max-width: 960px) {
+  #top {
+    width: 102px;
+    height: 102px;
+  }
+  #top i {
+    height: 36px;
+  }
+}
+@media screen and (max-width: 640px) {
+  #top {
+    width: 60px;
+    height: 60px;
+    border-width: 1px;
+    margin-top: -10px;
+  }
+  #top i {
+    height: 26px;
+  }
 }

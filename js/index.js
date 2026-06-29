@@ -114,8 +114,8 @@ btns.addEventListener("click", (e) => {
 const autoplay = document.querySelectorAll(".autoplay");
 const autoplayArray = new Array(autoplay.length).fill(true);
 
-window.addEventListener("load", autoplayStart);
-window.addEventListener("scroll", autoplayStart);
+//window.addEventListener("load", autoplayStart);
+//window.addEventListener("scroll", autoplayStart);
 
 
 //functions

@@ -10,6 +10,10 @@ main {
   overflow: hidden;
 }
 
+br.m {
+  display: none;
+}
+
 /* sec-title */
 .sec-title {
   padding-bottom: 60px;
@@ -95,20 +99,26 @@ main {
   transform: translateX(var(--gap));
   transition: background 0.4s, transform 0.4s;
 }
-.viewmore:hover {
-  background: var(--mainColor) !important;
-  border-color: var(--mainColor) !important;
-  color: #FFF !important;
-}
-.viewmore:hover span,
-.viewmore:hover i {
-  transform: translateX(0);
-}
-.viewmore:hover i {
-  background: #FFF !important;
-}
 
+@media screen and (hover: hover) and (pointer: fine) {
+  .viewmore:hover {
+    background: var(--mainColor) !important;
+    border-color: var(--mainColor) !important;
+    color: #FFF !important;
+  }
+  .viewmore:hover span,
+  .viewmore:hover i {
+    transform: translateX(0);
+  }
+  .viewmore:hover i {
+    background: #FFF !important;
+  }
+}
 @media screen and (max-width: 1700px) {
+  /* common */
+  :root {
+    --sec160: 130px;
+  }
   /* sec-title */
   .sec-title {
     padding-bottom: 40px;
@@ -131,15 +141,25 @@ main {
   }
 }
 @media screen and (max-width: 1280px) {
+  /* common */
+  :root {
+    --sec160: 100px;
+  }
   /* sec-title */
   .sec-title {
     padding-bottom: 30px;
+  }
+  .sec-title h2 {
+    font-size: 5.5rem;
   }
   .sec-title p {
     font-size: 20px;
     margin-top: 20px;
   }
   /* hyphen-list */
+  .hyphen-list li {
+    padding-left: 12px;
+  }
   .hyphen-list li:not(:last-of-type) {
     margin-bottom: 7px;
   }
@@ -166,6 +186,10 @@ main {
   }
 }
 @media screen and (max-width: 960px) {
+  /* sec-title */
+  .sec-title p {
+    font-size: 18px;
+  }
   /* hashtag */
   .hashtag ul li {
     font-size: 18px;
@@ -483,6 +507,10 @@ main {
 #profile .table-box .personal .flex-box {
   display: flex;
 }
+#profile .table-box .personal .flex-box > * {
+  transform: unset;
+  opacity: 1;
+}
 #profile .table-box .personal .img {
   flex-shrink: 0;
   display: flex;
@@ -554,6 +582,9 @@ main {
   }
   #profile .table-box table th span {
     min-height: 54px;
+  }
+  #profile .table-box .personal .img {
+    width: 280px;
   }
   #profile .table-box .education .flex img {
     width: 36px;
@@ -631,11 +662,24 @@ main {
   #profile .table-box .tit h3 {
     font-size: 19px;
   }
+  #profile .table-box .personal {
+    transform: scale(1);
+    opacity: 1;
+  }
   #profile .table-box .personal .flex-box {
     flex-direction: column;
   }
+  #profile .table-box .personal .flex-box > * {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  #profile .table-box .personal .flex-box > *.aos-animate {
+    transform: scale(1);
+    opacity: 1;
+  }
   #profile .table-box .personal .flex-box .img {
     justify-content: center;
+    width: 100%;
     border-width: 4px;
     padding: 10px;
     margin-bottom: 30px;
@@ -718,19 +762,6 @@ main {
 #project .sec-title .btns button.next i {
   transform: scaleX(-1);
 }
-#project .sec-title .btns button:hover {
-  background: var(--mainColor);
-  border-color: var(--mainColor);
-}
-#project .sec-title .btns button:hover i::before, #project .sec-title .btns button:hover i::after {
-  background: #FFF;
-}
-#project .sec-title .btns button:hover i::before {
-  transform: translateX(-150%);
-}
-#project .sec-title .btns button:hover i::after {
-  transform: translateX(0);
-}
 #project .sec-title .btns .num {
   width: 157px;
   display: flex;
@@ -801,6 +832,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 15px;
+  margin-top: 40px;
 }
 #project .autoplay .text .btns .viewmore {
   background: var(--textColor);
@@ -816,12 +848,20 @@ main {
 }
 #project .autoplay .img figure {
   display: block;
-  aspect-ratio: 700/600;
+  height: 100%;
+  padding-bottom: 85.715%;
+  position: relative;
 }
 #project .autoplay .img figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#project .autoplay .img .swiper {
+  height: 100%;
 }
 #project .autoplay .img .swiper-slide {
   opacity: 1 !important;
@@ -913,22 +953,199 @@ main {
   transform: translateX(var(--gap));
   transition: background 0.4s, transform 0.4s;
 }
-#project .archive .right ul li a:hover {
-  background: var(--mainColor);
-}
-#project .archive .right ul li a:hover h3 {
-  color: #FFF;
-  transform: translateX(0);
-}
-#project .archive .right ul li a:hover h3 em {
-  background: #FFF;
-  color: var(--mainColor);
-}
-#project .archive .right ul li a:hover i {
-  background: #FFF;
-  transform: translateX(0);
-}
 
+@media screen and (hover: hover) and (pointer: fine) {
+  #project .sec-title .btns button:hover {
+    background: var(--mainColor);
+    border-color: var(--mainColor);
+  }
+  #project .sec-title .btns button:hover i::before, #project .sec-title .btns button:hover i::after {
+    background: #FFF;
+  }
+  #project .sec-title .btns button:hover i::before {
+    transform: translateX(-150%);
+  }
+  #project .sec-title .btns button:hover i::after {
+    transform: translateX(0);
+  }
+  #project .archive .right ul li a:hover {
+    background: var(--mainColor);
+  }
+  #project .archive .right ul li a:hover h3 {
+    color: #FFF;
+    transform: translateX(0);
+  }
+  #project .archive .right ul li a:hover h3 em {
+    background: #FFF;
+    color: var(--mainColor);
+  }
+  #project .archive .right ul li a:hover i {
+    background: #FFF;
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 1700px) {
+  #project .sec-title .btns button {
+    width: 55px;
+    height: 55px;
+  }
+  #project .sec-title .btns button i {
+    width: 19px;
+    height: 19px;
+  }
+  #project .sec-title .btns .num {
+    width: 145px;
+    font-size: 21px;
+  }
+  #project .autoplay .text .content .tit p {
+    font-size: 22px;
+  }
+  #project .autoplay .text .content .hyphen-list li {
+    font-size: 20px;
+  }
+  #project .autoplay .text .swiper-slide {
+    padding: 40px 50px;
+  }
+  #project .autoplay .img {
+    width: 600px;
+  }
+  #project .archive {
+    padding-top: 80px;
+  }
+  #project .archive .left {
+    width: 500px;
+  }
+  #project .archive .right ul li a {
+    padding-block: 10px;
+  }
+  #project .archive .right ul li a h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  #project .sec-title .btns button {
+    width: 50px;
+    height: 50px;
+  }
+  #project .sec-title .btns button i {
+    width: 17px;
+    height: 17px;
+  }
+  #project .sec-title .btns .num {
+    width: 130px;
+    font-size: 20px;
+  }
+  #project .autoplay .text .swiper-slide {
+    padding: 25px 35px;
+  }
+  #project .autoplay .text .content > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  #project .autoplay .text .content .tit p {
+    font-size: 20px;
+  }
+  #project .autoplay .text .content .hyphen-list li {
+    font-size: 18px;
+  }
+  #project .autoplay .text .btns {
+    margin-top: 30px;
+  }
+  #project .autoplay .img {
+    width: 500px;
+  }
+  #project .archive {
+    padding-top: 60px;
+  }
+  #project .archive .left {
+    width: 400px;
+  }
+  #project .archive .left p {
+    font-size: 4.2rem;
+  }
+  #project .archive .right {
+    --padding: 10px;
+    --gap: 7px;
+  }
+  #project .archive .right ul li a {
+    padding-block: 10px;
+  }
+  #project .archive .right ul li a h3 {
+    font-size: 18px;
+  }
+  #project .archive .right ul li a h3 em {
+    font-size: 14px;
+    padding: 2px 8px;
+  }
+  #project .archive .right ul li a i {
+    width: 19px;
+    height: 19px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  #project .autoplay .img {
+    width: 420px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #project .autoplay .flex-box {
+    flex-direction: column-reverse;
+  }
+  #project .autoplay .text {
+    border-right: none;
+    border-top: 2px solid var(--textColor);
+  }
+  #project .autoplay .text .swiper,
+  #project .autoplay .text .swiper-wrapper,
+  #project .autoplay .text .swiper-slide {
+    height: unset;
+  }
+  #project .autoplay .img {
+    width: 100%;
+  }
+  #project .archive .flex-box {
+    flex-direction: column;
+  }
+  #project .archive .left {
+    width: 100%;
+    padding: 0 0 25px;
+  }
+}
+@media screen and (max-width: 960px) {
+  #project .sec-title {
+    flex-direction: column;
+  }
+  #project .sec-title .text {
+    width: 100%;
+    padding: 0 0 20px;
+  }
+  #project .sec-title .btns button {
+    width: 46px;
+    height: 46px;
+  }
+  #project .sec-title .btns button i {
+    width: 16px;
+    height: 16px;
+  }
+  #project .sec-title .btns .num {
+    width: 120px;
+    font-size: 17px;
+  }
+  #project .autoplay .text .content > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  #project .autoplay .text .content .tit p {
+    font-size: 18px;
+    margin-top: 3px;
+  }
+  #project .autoplay .text .btns .viewmore {
+    min-height: 50px;
+  }
+}
+@media screen and (max-width: 640px) {
+  #project .autoplay .text .swiper-slide {
+    padding: 20px 25px;
+  }
+}
 /* ===== Let’s Work Together ===== */
 #together {
   text-align: center;
@@ -967,4 +1184,86 @@ main {
 #together .text strong {
   font-size: 28px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 1700px) {
+  #together .icon-list ul li {
+    padding: 40px;
+  }
+  #together .icon-list ul li .icon img {
+    height: 55px;
+  }
+  #together .icon-list ul li p {
+    font-size: 22px;
+  }
+  #together .text p {
+    font-size: 22px;
+  }
+  #together .text strong {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  #together .sec-title {
+    padding-bottom: 35px;
+  }
+  #together .sec-title h2 {
+    font-size: 5.5rem;
+  }
+  #together .icon-list {
+    max-width: 1000px;
+  }
+  #together .icon-list ul li {
+    padding: 30px;
+  }
+  #together .icon-list ul li .icon img {
+    height: 50px;
+  }
+  #together .icon-list ul li p {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  #together .text {
+    margin-top: 35px;
+  }
+  #together .text > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  #together .text p {
+    font-size: 20px;
+  }
+  #together .text strong {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 960px) {
+  #together .sec-title h2 {
+    font-size: 5rem;
+  }
+  #together .icon-list {
+    max-width: 560px;
+  }
+  #together .icon-list ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #together .icon-list ul li .icon img {
+    height: 45px;
+  }
+  #together .icon-list ul li p {
+    font-size: 18px;
+  }
+  #together .text p {
+    font-size: 18px;
+  }
+  #together .text strong {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #together .text br {
+    display: none;
+  }
+  #together .text br.m {
+    display: block;
+  }
 }
