@@ -95,7 +95,7 @@ br.m {
   width: 24px;
   height: 24px;
   background: var(--textColor);
-  mask: url("/img/index/icon_viewmore.svg") no-repeat center center/contain;
+  mask: url("../img/index/icon_viewmore.svg") no-repeat center center/contain;
   transform: translateX(var(--gap));
   transition: background 0.4s, transform 0.4s;
 }
@@ -280,7 +280,7 @@ br.m {
 }
 #visual .scrolldown div span {
   display: block;
-  background: url("/img/index/icon_scrolldown.svg") no-repeat center center/contain;
+  background: url("../img/index/icon_scrolldown.svg") no-repeat center center/contain;
   aspect-ratio: 1/1;
   animation: rotate360 8s linear infinite;
 }
@@ -296,7 +296,7 @@ br.m {
 #visual .scrolldown div i::before, #visual .scrolldown div i::after {
   content: "";
   height: 100%;
-  background: url("/img/index/icon_scrolldown_arrow.svg") no-repeat center center/contain;
+  background: url("../img/index/icon_scrolldown_arrow.svg") no-repeat center center/contain;
   position: absolute;
   left: 0;
   right: 0;
@@ -703,6 +703,11 @@ br.m {
     --tablethFS: 14px;
   }
 }
+@media screen and (max-width: 540px) {
+  #profile br.m {
+    display: block;
+  }
+}
 /* ===== project ===== */
 #project {
   padding: calc(var(--sec160) / 2) 0;
@@ -745,8 +750,8 @@ br.m {
   width: 100%;
   height: 100%;
   background: var(--textColor);
-  mask: url("/img/index/icon_slide_btn.svg") no-repeat center center/contain;
-  -webkit-mask: url("/img/index/icon_slide_btn.svg") no-repeat center center/contain;
+  mask: url("../img/index/icon_slide_btn.svg") no-repeat center center/contain;
+  -webkit-mask: url("../img/index/icon_slide_btn.svg") no-repeat center center/contain;
   transition: background 0.4s, transform 0.4s;
 }
 #project .sec-title .btns button i::before {
@@ -948,8 +953,8 @@ br.m {
   width: 24px;
   height: 24px;
   background: var(--textColor);
-  mask: url("/img/index/icon_viewmore.svg") no-repeat center center/contain;
-  -webkit-mask: url("/img/index/icon_viewmore.svg") no-repeat center center/contain;
+  mask: url("../img/index/icon_viewmore.svg") no-repeat center center/contain;
+  -webkit-mask: url("../img/index/icon_viewmore.svg") no-repeat center center/contain;
   transform: translateX(var(--gap));
   transition: background 0.4s, transform 0.4s;
 }
@@ -1245,6 +1250,9 @@ br.m {
   }
   #together .icon-list ul {
     grid-template-columns: repeat(2, 1fr);
+  }
+  #together .icon-list ul li {
+    transition-delay: unset !important;
   }
   #together .icon-list ul li .icon img {
     height: 45px;
