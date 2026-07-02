@@ -254,6 +254,7 @@ br.m{
         --gap: 7px;
         --paddingLR: 15px;
 
+        min-height: 55px;
         font-size: 17px;
 
         span{
@@ -1191,6 +1192,10 @@ br.m{
     .archive{
         padding-top: 100px;
 
+        .viewmore{
+            border-color: var(--textColor);
+        }
+
         .flex-box{
             display: flex;
         }
@@ -1204,6 +1209,10 @@ br.m{
                 font-family: var(--engFont);
                 font-size: 4rem;
                 font-weight: 400;
+            }
+
+            .link{
+                margin-top: 60px;
             }
         }
 
@@ -1265,6 +1274,12 @@ br.m{
                         }
                     }
                 }
+            }
+
+            .clone{
+                display: none;
+                justify-content: center;
+                margin-top: 40px;
             }
         }
     }
@@ -1379,6 +1394,10 @@ br.m{
 
             .left{
                 width: 500px;
+
+                .link{
+                    margin-top: 40px;
+                }
             }
 
             .right{
@@ -1463,6 +1482,10 @@ br.m{
                 p{
                     font-size: 4.2rem;
                 }
+
+                .link{
+                    margin-top: 30px;
+                }
             }
 
             .right{
@@ -1536,6 +1559,16 @@ br.m{
             .left{
                 width: 100%;
                 padding: 0 0 25px;
+
+                .link{
+                    display: none;
+                }
+            }
+
+            .right{
+                .clone{
+                    display: flex;
+                }
             }
         }
     }
@@ -1543,6 +1576,10 @@ br.m{
 
 @media screen and (max-width: 960px){
     #project{
+        .viewmore{
+            font-size: 16px;
+        }
+
         .sec-title{
             flex-direction: column;
 
@@ -1588,6 +1625,14 @@ br.m{
                     .viewmore{
                         min-height: 50px;
                     }
+                }
+            }
+        }
+
+        .archive{
+            .right{
+                .clone{
+                    margin-top: 25px;
                 }
             }
         }

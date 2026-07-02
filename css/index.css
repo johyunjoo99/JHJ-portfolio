@@ -199,6 +199,7 @@ br.m {
   .viewmore {
     --gap: 7px;
     --paddingLR: 15px;
+    min-height: 55px;
     font-size: 17px;
   }
   .viewmore span {
@@ -892,6 +893,9 @@ br.m {
 #project .archive {
   padding-top: 100px;
 }
+#project .archive .viewmore {
+  border-color: var(--textColor);
+}
 #project .archive .flex-box {
   display: flex;
 }
@@ -904,6 +908,9 @@ br.m {
   font-family: var(--engFont);
   font-size: 4rem;
   font-weight: 400;
+}
+#project .archive .left .link {
+  margin-top: 60px;
 }
 #project .archive .right {
   --padding: 15px;
@@ -957,6 +964,11 @@ br.m {
   -webkit-mask: url("../img/index/icon_viewmore.svg") no-repeat center center/contain;
   transform: translateX(var(--gap));
   transition: background 0.4s, transform 0.4s;
+}
+#project .archive .right .clone {
+  display: none;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 @media screen and (hover: hover) and (pointer: fine) {
@@ -1020,6 +1032,9 @@ br.m {
   #project .archive .left {
     width: 500px;
   }
+  #project .archive .left .link {
+    margin-top: 40px;
+  }
   #project .archive .right ul li a {
     padding-block: 10px;
   }
@@ -1066,6 +1081,9 @@ br.m {
   }
   #project .archive .left p {
     font-size: 4.2rem;
+  }
+  #project .archive .left .link {
+    margin-top: 30px;
   }
   #project .archive .right {
     --padding: 10px;
@@ -1114,8 +1132,17 @@ br.m {
     width: 100%;
     padding: 0 0 25px;
   }
+  #project .archive .left .link {
+    display: none;
+  }
+  #project .archive .right .clone {
+    display: flex;
+  }
 }
 @media screen and (max-width: 960px) {
+  #project .viewmore {
+    font-size: 16px;
+  }
   #project .sec-title {
     flex-direction: column;
   }
@@ -1144,6 +1171,9 @@ br.m {
   }
   #project .autoplay .text .btns .viewmore {
     min-height: 50px;
+  }
+  #project .archive .right .clone {
+    margin-top: 25px;
   }
 }
 @media screen and (max-width: 640px) {

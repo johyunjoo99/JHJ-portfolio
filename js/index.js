@@ -110,6 +110,14 @@ btns.addEventListener("click", (e) => {
 });
 
 
+//link
+const archive = project.querySelector(".archive");
+const link = archive.querySelector(".link .viewmore");
+const linkClone = link.cloneNode(true);
+
+archive.querySelector(".clone").append(linkClone);
+
+
 //slide autoplay
 const autoplay = document.querySelectorAll(".autoplay");
 const autoplayArray = new Array(autoplay.length).fill(true);
